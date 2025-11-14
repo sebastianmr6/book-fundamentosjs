@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Definir variables - Fundamentos de JavaScript para profesionales de Ciencias Ambientales</title>
+        <title>Operadores - Fundamentos de JavaScript para profesionales de Ciencias Ambientales</title>
 
 
         <!-- Custom HTML head -->
@@ -175,135 +175,75 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="variables-en-javascript"><a class="header" href="#variables-en-javascript">Variables en JavaScript</a></h2>
-<p>Una variable es un contenedor para almacenar datos, que puede cambiar durante la ejecución del programa. Se debe declarar antes de usarla y puede contener diferentes tipos de datos como números, cadenas de texto, objetos, etc.</p>
-<p>La declaración se realiza a través de las palabras reservadas <code>var</code>, <code>let</code> o <code>const</code>, seguidas del nombre de la variable y, opcionalmente, un valor inicial.</p>
-<pre><code class="language-javascript runnable">var nombreVar = "Juan";
-let nombreLet = "Ana";
-const nombreConst = "Luis";
-</code></pre>
-<p>El uso de <code>var</code> es más antiguo y tiene un alcance de función, mientras que <code>let</code> y <code>const</code> tienen un alcance de bloque, siendo <code>const</code> para valores que no deben ni pueden cambiar.</p>
-<p>Se desaconseja el uso de <code>var</code> en favor de <code>let</code> y <code>const</code> debido a problemas de alcance y hoisting.</p>
-<p>Nota: Durante este tutorial verás que se usa <code>console.log()</code> para mostrar información en la consola del navegador o del entorno de ejecución, esto lo que hace es que imprimirá en la consola el valor de la variable o el resultado de alguna expresión, también verás el símbolo <code>&gt;</code> que indica la salida o resultado de una operación en la consola.</p>
-<p><strong>¿Qué es el alcance de una variable?:</strong> El alcance determina la visibilidad de una variable en diferentes partes del código.</p>
+                        <h1 id="operadores-en-javascript"><a class="header" href="#operadores-en-javascript">Operadores en JavaScript</a></h1>
+<p>JavaScript ofrece una variedad de operadores que permiten realizar operaciones sobre valores y variables. A continuación, se describen los principales tipos de operadores:</p>
+<h2 id="operadores-aritméticos"><a class="header" href="#operadores-aritméticos">Operadores Aritméticos</a></h2>
+<p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas:</p>
 <ul>
-<li>Alcance de <code>var</code>: es a nivel de función y no a nivel de bloque. presenta prblemas pues permite acceder a la variable fuera del bloque donde fue declarada y puede causar confusión, también puede ser redeclarada dentro del mismo ámbito.</li>
+<li><code>+</code> : Suma</li>
+<li><code>-</code> : Resta</li>
+<li><code>*</code> : Multiplicación</li>
+<li><code>/</code> : División</li>
+<li><code>%</code> : Módulo (resto de una división)</li>
+<li><code>++</code> : Incremento</li>
+<li><code>--</code> : Decremento</li>
 </ul>
-<pre><code class="language-javascript">// Problema: Redeclaración permitida
-var nombre = "LANDSAT";
-var nombre = "Sentinel";            // No genera error
-console.log(nombre);                
-&gt; "Sentinel"
-</code></pre>
+<h2 id="operadores-de-asignación"><a class="header" href="#operadores-de-asignación">Operadores de Asignación</a></h2>
+<p>Los operadores de asignación se utilizan para asignar valores a las variables:</p>
 <ul>
-<li>Alcance de <code>let</code> y <code>const</code>: tienen alcance de bloque, lo que significa que solo son accesibles dentro del bloque donde fueron declaradas (entre llaves <code>{}</code>). Esto evita confusiones y errores comunes.</li>
+<li><code>=</code> : Asignación simple</li>
+<li><code>+=</code> : Asignación con suma</li>
+<li><code>-=</code> : Asignación con resta</li>
+<li><code>*=</code> : Asignación con multiplicación</li>
+<li><code>/=</code> : Asignación con división</li>
+<li><code>%=</code> : Asignación con módulo</li>
 </ul>
-<pre><code class="language-javascript">// Ejemplo: Alcance de bloque con let
-if (true) {
-    let edad = 30;
-    console.log(edad);              // 30
-}
-console.log(edad);                  // Error: edad no está definida
-
-// Ejemplo: Alcance de bloque con const
-if (true) {
-    const PI = 3.14;
-    console.log(PI);                // 3.14
-}
-console.log(PI);                    // Error: PI no está definida 
-</code></pre>
+<h2 id="operadores-de-comparación"><a class="header" href="#operadores-de-comparación">Operadores de Comparación</a></h2>
+<p>Los operadores de comparación se utilizan para comparar dos valores:</p>
 <ul>
-<li>Una función es un bloque de código diseñado para realizar una tarea específica. Se define utilizando la palabra clave <code>function</code>, seguida del nombre de la función, paréntesis y llaves que contienen el código a ejecutar. Esto lo veremos en el capítulo de funciones pero puedes tomar en cuenta el siguiente ejemplo de los problemas de var al usar funciones:</li>
+<li><code>==</code> : Igualdad (compara valores)</li>
+<li><code>===</code> : Igualdad estricta (compara valores y tipos)</li>
+<li><code>!=</code> : Desigualdad (compara valores)</li>
+<li><code>!==</code> : Desigualdad estricta (compara valores y tipos)</li>
+<li><code>&gt;</code> : Mayor que</li>
+<li><code>&lt;</code> : Menor que</li>
+<li><code>&gt;=</code> : Mayor o igual que</li>
+<li><code>&lt;=</code> : Menor o igual que</li>
 </ul>
-<p>El uso de <code>var</code> dentro de una función permite acceder a la variable fuera del bloque donde fue declarada, lo que puede causar confusión.</p>
-<pre><code class="language-javascript">function ejemploVar() {
-    if (true) {
-        var mensaje = "Hola desde var";
-    }
-    console.log(mensaje);              // "Hola desde var" (acceso permitido)
-}
-ejemploVar();
-</code></pre>
-<p>Caso contrario con <code>let</code> y <code>const</code> pues esto no es posible:</p>
-<pre><code class="language-javascript">function ejemploLetConst() {
-    if (true) {
-        let mensajeLet = "Hola desde let";
-        const mensajeConst = "Hola desde const";
-    }
-    console.log(mensajeLet);           // Error: mensajeLet no está definida
-    console.log(mensajeConst);         // Error: mensajeConst no está definida
-}
-ejemploLetConst();
-</code></pre>
+<h2 id="operadores-lógicos"><a class="header" href="#operadores-lógicos">Operadores Lógicos</a></h2>
+<p>Los operadores lógicos se utilizan para combinar expresiones booleanas:</p>
 <ul>
-<li>El hoisting es un comportamiento en JavaScript donde las declaraciones de variables y funciones son movidas a la parte superior de su ámbito antes de la ejecución del código. Esto puede llevar a resultados inesperados, especialmente con <code>var</code>.
-En el siguiente ejemplo, la variable <code>miVariable</code> es accesible antes de su declaración debido al hoisting, pero su valor es <code>undefined</code> hasta que se asigna un valor.</li>
+<li><code>&amp;&amp;</code> : AND lógico</li>
+<li><code>||</code> : OR lógico</li>
+<li><code>!</code> : NOT lógico</li>
 </ul>
-<pre><code class="language-javascript">// Problema: Hoisting confuso
-console.log(miVariable); // undefined (no error)
-var miVariable = "Hola mundo";
+<h2 id="operadores-de-cadena"><a class="header" href="#operadores-de-cadena">Operadores de Cadena</a></h2>
+<p>Los operadores de cadena se utilizan para manipular cadenas de texto:</p>
+<ul>
+<li><code>+</code> : Concatenación de cadenas</li>
+<li><code>+=</code> : Concatenación y asignación</li>
+</ul>
+<h2 id="operadores-ternarios"><a class="header" href="#operadores-ternarios">Operadores Ternarios</a></h2>
+<p>El operador ternario es una forma abreviada de una declaración <code>if-else</code>:</p>
+<pre><code class="language-javascript">condición ? expresión1 : expresión2
 </code></pre>
-<p>Si se usa <code>let</code> o <code>const</code>, acceder a la variable antes de su declaración genera un error, lo que ayuda a evitar confusiones.</p>
-<pre><code class="language-javascript">// Ejemplo: Hoisting con let/const
-console.log(miVariableLet); // Error: miVariableLet no está definida
-let miVariableLet = "Hola mundo";
-</code></pre>
-<p>En algunas partes las variables son escritas en inglés para mantener consistencia con la mayoría de la documentación técnica, pero es recomendable usar el idioma que mejor se adapte al equipo de desarrollo. Las variables deben ser descriptivas y seguir una convención de nomenclatura consistente.</p>
-<h3 id="tipo-de-formas-comunes-para-nombrar-variables"><a class="header" href="#tipo-de-formas-comunes-para-nombrar-variables">Tipo de formas comunes para nombrar variables:</a></h3>
-<ol>
-<li><strong>camelCase</strong>: La primera palabra en minúscula y las siguientes con la primera letra en mayúscula.
-<pre><code class="language-javascript">let nombreDeLaMision = "Landsat";
-</code></pre>
-</li>
-<li><strong>snake_case</strong>: Todas las palabras en minúscula separadas por guiones bajos.
-<pre><code class="language-javascript">let nombre_de_la_mision = "Sentinel - 2";
-</code></pre>
-</li>
-<li><strong>PascalCase</strong>: Todas las palabras con la primera letra en mayúscula.
-<pre><code class="language-javascript">let MejorCursoDeLaCarrera = "Sistemas de Información Geográfica";
-</code></pre>
-</li>
-</ol>
-<h3 id="buenas-prácticas-para-nombrar-variables"><a class="header" href="#buenas-prácticas-para-nombrar-variables">Buenas prácticas para nombrar variables:</a></h3>
-<ol>
-<li>
-<p><strong>Usar nombres descriptivos</strong></p>
-<pre><code class="language-javascript">let edadUsuario = 25;
-</code></pre>
-</li>
-<li>
-<p><strong>Usar camelCase para múltiples palabras</strong></p>
-<pre><code class="language-javascript">let numeroDeEstudiantes = 30;
-</code></pre>
-</li>
-<li>
-<p><strong>Evitar usar palabras reservadas del lenguaje</strong></p>
-<pre><code class="language-javascript">let for = 10; // Incorrecto
-</code></pre>
-</li>
-<li>
-<p><strong>No comenzar con números</strong></p>
-<pre><code class="language-javascript">let 1nombre = "Pedro"; // Incorrecto
-</code></pre>
-</li>
-<li>
-<p><strong>Usar minúsculas para la primera letra (camelCase)</strong></p>
-<pre><code class="language-javascript">let ciudadNacimiento = "Madrid";
-</code></pre>
-</li>
-</ol>
+<p>Si la condición es verdadera, se evalúa <code>expresión1</code>; de lo contrario, se evalúa <code>expresión2</code>.</p>
+<h2 id="operadores-de-tipo"><a class="header" href="#operadores-de-tipo">Operadores de Tipo</a></h2>
+<p>Los operadores de tipo se utilizan para obtener información sobre el tipo de dato de una variable:</p>
+<ul>
+<li><code>typeof</code> : Devuelve una cadena que indica el tipo de dato</li>
+<li><code>instanceof</code> : Comprueba si un objeto es una instancia de una clase específica
+Estos operadores son fundamentales para la manipulación de datos y el control del flujo en JavaScript.</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="00_introduccion.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="02_Tipos_de_datos.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="02_Tipos_de_datos.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -311,13 +251,10 @@ let miVariableLet = "Hola mundo";
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="00_introduccion.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="02_Tipos_de_datos.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="02_Tipos_de_datos.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

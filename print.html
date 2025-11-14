@@ -181,7 +181,7 @@
 <div style="break-before: page; page-break-before: always;"></div><h2 id="variables-en-javascript"><a class="header" href="#variables-en-javascript">Variables en JavaScript</a></h2>
 <p>Una variable es un contenedor para almacenar datos, que puede cambiar durante la ejecución del programa. Se debe declarar antes de usarla y puede contener diferentes tipos de datos como números, cadenas de texto, objetos, etc.</p>
 <p>La declaración se realiza a través de las palabras reservadas <code>var</code>, <code>let</code> o <code>const</code>, seguidas del nombre de la variable y, opcionalmente, un valor inicial.</p>
-<pre><code class="language-javascript">var nombreVar = "Juan";
+<pre><code class="language-javascript runnable">var nombreVar = "Juan";
 let nombreLet = "Ana";
 const nombreConst = "Luis";
 </code></pre>
@@ -351,6 +351,66 @@ let persona = {
 };                                      // Object    
 let frutas = ["Manzana", "Banana", "Cereza"]; // Array
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="operadores-en-javascript"><a class="header" href="#operadores-en-javascript">Operadores en JavaScript</a></h1>
+<p>JavaScript ofrece una variedad de operadores que permiten realizar operaciones sobre valores y variables. A continuación, se describen los principales tipos de operadores:</p>
+<h2 id="operadores-aritméticos"><a class="header" href="#operadores-aritméticos">Operadores Aritméticos</a></h2>
+<p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas:</p>
+<ul>
+<li><code>+</code> : Suma</li>
+<li><code>-</code> : Resta</li>
+<li><code>*</code> : Multiplicación</li>
+<li><code>/</code> : División</li>
+<li><code>%</code> : Módulo (resto de una división)</li>
+<li><code>++</code> : Incremento</li>
+<li><code>--</code> : Decremento</li>
+</ul>
+<h2 id="operadores-de-asignación"><a class="header" href="#operadores-de-asignación">Operadores de Asignación</a></h2>
+<p>Los operadores de asignación se utilizan para asignar valores a las variables:</p>
+<ul>
+<li><code>=</code> : Asignación simple</li>
+<li><code>+=</code> : Asignación con suma</li>
+<li><code>-=</code> : Asignación con resta</li>
+<li><code>*=</code> : Asignación con multiplicación</li>
+<li><code>/=</code> : Asignación con división</li>
+<li><code>%=</code> : Asignación con módulo</li>
+</ul>
+<h2 id="operadores-de-comparación"><a class="header" href="#operadores-de-comparación">Operadores de Comparación</a></h2>
+<p>Los operadores de comparación se utilizan para comparar dos valores:</p>
+<ul>
+<li><code>==</code> : Igualdad (compara valores)</li>
+<li><code>===</code> : Igualdad estricta (compara valores y tipos)</li>
+<li><code>!=</code> : Desigualdad (compara valores)</li>
+<li><code>!==</code> : Desigualdad estricta (compara valores y tipos)</li>
+<li><code>&gt;</code> : Mayor que</li>
+<li><code>&lt;</code> : Menor que</li>
+<li><code>&gt;=</code> : Mayor o igual que</li>
+<li><code>&lt;=</code> : Menor o igual que</li>
+</ul>
+<h2 id="operadores-lógicos"><a class="header" href="#operadores-lógicos">Operadores Lógicos</a></h2>
+<p>Los operadores lógicos se utilizan para combinar expresiones booleanas:</p>
+<ul>
+<li><code>&amp;&amp;</code> : AND lógico</li>
+<li><code>||</code> : OR lógico</li>
+<li><code>!</code> : NOT lógico</li>
+</ul>
+<h2 id="operadores-de-cadena"><a class="header" href="#operadores-de-cadena">Operadores de Cadena</a></h2>
+<p>Los operadores de cadena se utilizan para manipular cadenas de texto:</p>
+<ul>
+<li><code>+</code> : Concatenación de cadenas</li>
+<li><code>+=</code> : Concatenación y asignación</li>
+</ul>
+<h2 id="operadores-ternarios"><a class="header" href="#operadores-ternarios">Operadores Ternarios</a></h2>
+<p>El operador ternario es una forma abreviada de una declaración <code>if-else</code>:</p>
+<pre><code class="language-javascript">condición ? expresión1 : expresión2
+</code></pre>
+<p>Si la condición es verdadera, se evalúa <code>expresión1</code>; de lo contrario, se evalúa <code>expresión2</code>.</p>
+<h2 id="operadores-de-tipo"><a class="header" href="#operadores-de-tipo">Operadores de Tipo</a></h2>
+<p>Los operadores de tipo se utilizan para obtener información sobre el tipo de dato de una variable:</p>
+<ul>
+<li><code>typeof</code> : Devuelve una cadena que indica el tipo de dato</li>
+<li><code>instanceof</code> : Comprueba si un objeto es una instancia de una clase específica
+Estos operadores son fundamentales para la manipulación de datos y el control del flujo en JavaScript.</li>
+</ul>
 
                     </main>
 

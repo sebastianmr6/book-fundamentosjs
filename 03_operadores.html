@@ -181,29 +181,141 @@
 <p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas:</p>
 <ul>
 <li><code>+</code> : Suma</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+let b = 3;
+let suma = a + b; 
+console.log(suma);
+&gt; 8
+</code></pre>
+<ul>
 <li><code>-</code> : Resta</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+let b = 3;
+let resta = a - b; 
+console.log(resta);
+&gt; 2
+</code></pre>
+<ul>
 <li><code>*</code> : Multiplicación</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+let b = 3;
+let multiplicacion = a * b; 
+console.log(multiplicacion);
+&gt; 15
+</code></pre>
+<ul>
 <li><code>/</code> : División</li>
+</ul>
+<pre><code class="language-javascript">let a = 6;
+let b = 3;
+let division = a / b;
+console.log(division);
+&gt; 2
+</code></pre>
+<ul>
 <li><code>%</code> : Módulo (resto de una división)</li>
+</ul>
+<pre><code class="language-javascript">let a = 10;
+let b = 4;
+let modulo = a % b;
+console.log(modulo);
+&gt; 2
+</code></pre>
+<ul>
 <li><code>++</code> : Incremento</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+a++;
+console.log(a);
+&gt; 6
+</code></pre>
+<ul>
 <li><code>--</code> : Decremento</li>
 </ul>
+<pre><code class="language-javascript">let a = 5;
+a--;
+console.log(a);
+&gt; 4
+</code></pre>
 <h2 id="operadores-de-asignación"><a class="header" href="#operadores-de-asignación">Operadores de Asignación</a></h2>
 <p>Los operadores de asignación se utilizan para asignar valores a las variables:</p>
 <ul>
 <li><code>=</code> : Asignación simple</li>
+</ul>
+<pre><code class="language-javascript">let a = 10;
+console.log(a);
+&gt; 10
+</code></pre>
+<ul>
 <li><code>+=</code> : Asignación con suma</li>
+</ul>
+<pre><code class="language-javascript">let numero = 5;
+numero += 3; // Equivalente a numero = numero + 3
+console.log(numero);
+&gt; 8
+</code></pre>
+<ul>
 <li><code>-=</code> : Asignación con resta</li>
+</ul>
+<pre><code class="language-javascript">let numero = 5;
+numero -= 2; // Equivalente a numero = numero - 2
+console.log(numero);
+&gt; 3
+</code></pre>
+<ul>
 <li><code>*=</code> : Asignación con multiplicación</li>
+</ul>
+<pre><code class="language-javascript">let numero = 5;
+numero *= 4; // Equivalente a numero = numero * 4
+console.log(numero);
+&gt; 20
+</code></pre>
+<ul>
 <li><code>/=</code> : Asignación con división</li>
+</ul>
+<pre><code class="language-javascript">let numero = 20;
+numero /= 5; // Equivalente a numero = numero / 5
+console.log(numero);
+&gt; 4
+</code></pre>
+<ul>
 <li><code>%=</code> : Asignación con módulo</li>
 </ul>
+<pre><code class="language-javascript">let numero = 10;
+numero %= 3; // Equivalente a numero = numero % 3
+console.log(numero);
+&gt; 1
+</code></pre>
 <h2 id="operadores-de-comparación"><a class="header" href="#operadores-de-comparación">Operadores de Comparación</a></h2>
 <p>Los operadores de comparación se utilizan para comparar dos valores:</p>
 <ul>
 <li><code>==</code> : Igualdad (compara valores)</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+let b = '5';
+console.log(a == b);
+&gt; true
+</code></pre>
+<ul>
 <li><code>===</code> : Igualdad estricta (compara valores y tipos)</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+let b = '5';
+console.log(a === b);
+&gt; false
+</code></pre>
+<ul>
 <li><code>!=</code> : Desigualdad (compara valores)</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+let b = '6';
+console.log(a != b);
+&gt; true
+</code></pre>
+<ul>
 <li><code>!==</code> : Desigualdad estricta (compara valores y tipos)</li>
 <li><code>&gt;</code> : Mayor que</li>
 <li><code>&lt;</code> : Menor que</li>

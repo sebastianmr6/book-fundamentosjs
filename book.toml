@@ -1,0 +1,5 @@
+[book]
+authors = ["Sebastian Mejia Rios"]
+language = "en"
+src = "src"
+title = "Fundamentos de JavaScript para profesionales de Ciencias Ambientales"

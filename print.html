@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Fundamentos de JavaScript para profesionales de Ciencias Ambientales</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Fundamentos de JavaScript para profesionales de Ciencias Ambientales</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="variables-en-javascript"><a class="header" href="#variables-en-javascript">Variables en JavaScript</a></h2>
+<p>Una variable es un contenedor para almacenar datos, que puede cambiar durante la ejecución del programa. Se debe declarar antes de usarla y puede contener diferentes tipos de datos como números, cadenas de texto, objetos, etc.</p>
+<p>La declaración se realiza a través de las palabras reservadas <code>var</code>, <code>let</code> o <code>const</code>, seguidas del nombre de la variable y, opcionalmente, un valor inicial.</p>
+<pre><code class="language-javascript">var nombreVar = "Juan";
+let nombreLet = "Ana";
+const nombreConst = "Luis";
+</code></pre>
+<p>El uso de <code>var</code> es más antiguo y tiene un alcance de función, mientras que <code>let</code> y <code>const</code> tienen un alcance de bloque, siendo <code>const</code> para valores que no deben ni pueden cambiar.</p>
+<p>Se desaconseja el uso de <code>var</code> en favor de <code>let</code> y <code>const</code> debido a problemas de alcance y hoisting.</p>
+<p>Nota: Durante este tutorial verás que se usa <code>console.log()</code> para mostrar información en la consola del navegador o del entorno de ejecución, esto lo que hace es que imprimirá en la consola el valor de la variable o el resultado de alguna expresión, también verás el símbolo <code>&gt;</code> que indica la salida o resultado de una operación en la consola.</p>
+<p><strong>¿Qué es el alcance de una variable?:</strong> El alcance determina la visibilidad de una variable en diferentes partes del código.</p>
+<ul>
+<li>Alcance de <code>var</code>: es a nivel de función y no a nivel de bloque. presenta prblemas pues permite acceder a la variable fuera del bloque donde fue declarada y puede causar confusión, también puede ser redeclarada dentro del mismo ámbito.</li>
+</ul>
+<pre><code class="language-javascript">// Problema: Redeclaración permitida
+var nombre = "LANDSAT";
+var nombre = "Sentinel";            // No genera error
+console.log(nombre);                
+&gt; "Sentinel"
+</code></pre>
+<ul>
+<li>Alcance de <code>let</code> y <code>const</code>: tienen alcance de bloque, lo que significa que solo son accesibles dentro del bloque donde fueron declaradas (entre llaves <code>{}</code>). Esto evita confusiones y errores comunes.</li>
+</ul>
+<pre><code class="language-javascript">// Ejemplo: Alcance de bloque con let
+if (true) {
+    let edad = 30;
+    console.log(edad);              // 30
+}
+console.log(edad);                  // Error: edad no está definida
+
+// Ejemplo: Alcance de bloque con const
+if (true) {
+    const PI = 3.14;
+    console.log(PI);                // 3.14
+}
+console.log(PI);                    // Error: PI no está definida 
+</code></pre>
+<ul>
+<li>Una función es un bloque de código diseñado para realizar una tarea específica. Se define utilizando la palabra clave <code>function</code>, seguida del nombre de la función, paréntesis y llaves que contienen el código a ejecutar. Esto lo veremos en el capítulo de funciones pero puedes tomar en cuenta el siguiente ejemplo de los problemas de var al usar funciones:</li>
+</ul>
+<p>El uso de <code>var</code> dentro de una función permite acceder a la variable fuera del bloque donde fue declarada, lo que puede causar confusión.</p>
+<pre><code class="language-javascript">function ejemploVar() {
+    if (true) {
+        var mensaje = "Hola desde var";
+    }
+    console.log(mensaje);              // "Hola desde var" (acceso permitido)
+}
+ejemploVar();
+</code></pre>
+<p>Caso contrario con <code>let</code> y <code>const</code> pues esto no es posible:</p>
+<pre><code class="language-javascript">function ejemploLetConst() {
+    if (true) {
+        let mensajeLet = "Hola desde let";
+        const mensajeConst = "Hola desde const";
+    }
+    console.log(mensajeLet);           // Error: mensajeLet no está definida
+    console.log(mensajeConst);         // Error: mensajeConst no está definida
+}
+ejemploLetConst();
+</code></pre>
+<ul>
+<li>El hoisting es un comportamiento en JavaScript donde las declaraciones de variables y funciones son movidas a la parte superior de su ámbito antes de la ejecución del código. Esto puede llevar a resultados inesperados, especialmente con <code>var</code>.
+En el siguiente ejemplo, la variable <code>miVariable</code> es accesible antes de su declaración debido al hoisting, pero su valor es <code>undefined</code> hasta que se asigna un valor.</li>
+</ul>
+<pre><code class="language-javascript">// Problema: Hoisting confuso
+console.log(miVariable); // undefined (no error)
+var miVariable = "Hola mundo";
+</code></pre>
+<p>Si se usa <code>let</code> o <code>const</code>, acceder a la variable antes de su declaración genera un error, lo que ayuda a evitar confusiones.</p>
+<pre><code class="language-javascript">// Ejemplo: Hoisting con let/const
+console.log(miVariableLet); // Error: miVariableLet no está definida
+let miVariableLet = "Hola mundo";
+</code></pre>
+<p>En algunas partes las variables son escritas en inglés para mantener consistencia con la mayoría de la documentación técnica, pero es recomendable usar el idioma que mejor se adapte al equipo de desarrollo. Las variables deben ser descriptivas y seguir una convención de nomenclatura consistente.</p>
+<h3 id="tipo-de-formas-comunes-para-nombrar-variables"><a class="header" href="#tipo-de-formas-comunes-para-nombrar-variables">Tipo de formas comunes para nombrar variables:</a></h3>
+<ol>
+<li><strong>camelCase</strong>: La primera palabra en minúscula y las siguientes con la primera letra en mayúscula.
+<pre><code class="language-javascript">let nombreDeLaMision = "Landsat";
+</code></pre>
+</li>
+<li><strong>snake_case</strong>: Todas las palabras en minúscula separadas por guiones bajos.
+<pre><code class="language-javascript">let nombre_de_la_mision = "Sentinel - 2";
+</code></pre>
+</li>
+<li><strong>PascalCase</strong>: Todas las palabras con la primera letra en mayúscula.
+<pre><code class="language-javascript">let MejorCursoDeLaCarrera = "Sistemas de Información Geográfica";
+</code></pre>
+</li>
+</ol>
+<h3 id="buenas-prácticas-para-nombrar-variables"><a class="header" href="#buenas-prácticas-para-nombrar-variables">Buenas prácticas para nombrar variables:</a></h3>
+<ol>
+<li>
+<p><strong>Usar nombres descriptivos</strong></p>
+<pre><code class="language-javascript">let edadUsuario = 25;
+</code></pre>
+</li>
+<li>
+<p><strong>Usar camelCase para múltiples palabras</strong></p>
+<pre><code class="language-javascript">let numeroDeEstudiantes = 30;
+</code></pre>
+</li>
+<li>
+<p><strong>Evitar usar palabras reservadas del lenguaje</strong></p>
+<pre><code class="language-javascript">let for = 10; // Incorrecto
+</code></pre>
+</li>
+<li>
+<p><strong>No comenzar con números</strong></p>
+<pre><code class="language-javascript">let 1nombre = "Pedro"; // Incorrecto
+</code></pre>
+</li>
+<li>
+<p><strong>Usar minúsculas para la primera letra (camelCase)</strong></p>
+<pre><code class="language-javascript">let ciudadNacimiento = "Madrid";
+</code></pre>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="qué-son-los-tipos-de-datos-en-javascript"><a class="header" href="#qué-son-los-tipos-de-datos-en-javascript">¿Qué son los tipos de datos en JavaScript?</a></h1>
+<p>Los tipos de datos en JavaScript son las diferentes categorías de valores que pueden ser almacenados y manipulados en un programa. JavaScript es un lenguaje de tipado dinámico, lo que significa que no es necesario declarar el tipo de dato de una variable al momento de su creación; el tipo se determina automáticamente en tiempo de ejecución según el valor asignado. Es decir, una variable puede contener diferentes tipos de datos en diferentes momentos durante la ejecución del programa.</p>
+<h2 id="tipos-de-datos-primitivos"><a class="header" href="#tipos-de-datos-primitivos">Tipos de datos primitivos</a></h2>
+<p>Los tipos de datos primitivos en JavaScript son los siguientes:</p>
+<ul>
+<li><strong>Number</strong>: Representa tanto números enteros como números de punto flotante. Ejemplo: <code>42</code>, <code>3.14</code>.</li>
+<li><strong>String</strong>: Representa secuencias de caracteres. Se pueden definir usando comillas simples, dobles o backticks. Ejemplo: <code>'Hola'</code>, <code>"Mundo"</code>, <code>`Hola Mundo`</code>.</li>
+<li><strong>Boolean</strong>: Representa valores lógicos, que pueden ser <code>true</code> (verdadero) o <code>false</code> (falso).</li>
+<li><strong>Undefined</strong>: Representa una variable que ha sido declarada pero no inicializada. Su valor es <code>undefined</code>.</li>
+<li><strong>Null</strong>: Representa la ausencia intencional de cualquier valor. Su valor es <code>null</code>.</li>
+<li><strong>Symbol</strong>: Introducido en ECMAScript 6, representa un valor único e inmutable, utilizado principalmente como identificadores de propiedades de objetos.</li>
+<li><strong>BigInt</strong>: Introducido en ECMAScript 2020, permite representar números enteros muy grandes que exceden el límite de los números de tipo <code>Number</code>.</li>
+</ul>
+<p>ECMAScrip es un estandar para lenguajes de scripting siendo <em>JavaScript</em> la implementación más conocida de este estándar. Más información puedes ver <a href="https://developer.mozilla.org/es/docs/Glossary/ECMAScript">MDN</a>.</p>
+<h2 id="tipos-de-datos-no-primitivos"><a class="header" href="#tipos-de-datos-no-primitivos">Tipos de datos no primitivos</a></h2>
+<p>Los tipos de datos no primitivos en JavaScript incluyen:</p>
+<ul>
+<li><strong>Object</strong>: Es una colección de propiedades, donde cada propiedad es una asociación entre un nombre (clave) y un valor. Los objetos pueden contener otros objetos, funciones y tipos de datos primitivos. Ejemplo:</li>
+</ul>
+<pre><code class="language-javascript">let persona = {
+    nombre: "Juan",
+    edad: 30,
+    esEstudiante: false
+};
+</code></pre>
+<ul>
+<li><strong>Array</strong>: Es un tipo especial de objeto que representa una lista ordenada de valores. Los arrays pueden contener elementos de diferentes tipos de datos, incluidos otros arrays y objetos. Ejemplo:</li>
+</ul>
+<pre><code class="language-javascript">let numeros = [1, 2, 3, 4, 5];
+let mezclado = [1, "dos", true, { clave: "valor" }, [6, 7, 8]];
+</code></pre>
+<h2 id="conversión-de-tipos"><a class="header" href="#conversión-de-tipos">Conversión de tipos</a></h2>
+<p>JavaScript realiza conversiones de tipos de datos de manera automática (coerción) en ciertas situaciones, como en operaciones aritméticas o comparaciones. También es posible realizar conversiones explícitas utilizando funciones como <code>String()</code>, <code>Number()</code>, <code>Boolean()</code>, entre otras. Por ejemplo:</p>
+<pre><code class="language-javascript">let numero = 42;
+let texto = String(numero);         // Conversión explícita a String
+&gt; '42'
+let booleano = Boolean(1);          // Conversión explícita a Boolean
+&gt; true
+</code></pre>
+<p>Entender los tipos de datos en JavaScript es fundamental para escribir código efectivo y evitar errores comunes relacionados con la manipulación de datos.</p>
+<h2 id="ejemplos-prácticos"><a class="header" href="#ejemplos-prácticos">Ejemplos prácticos</a></h2>
+<pre><code class="language-javascript">// Ejemplo de tipos de datos primitivos
+let numero = 100;                       // Number
+let texto = "Hola, Mundo!";             // String
+let esVerdadero = true;                 // Boolean
+let sinValor;                           // Undefined
+let valorNulo = null;                   // Null
+let simbolo = Symbol("id");             // Symbol
+let numeroGrande = 9007199254740991n;   // BigInt
+// Ejemplo de tipos de datos no primitivos
+let persona = {
+    nombre: "Ana",
+    edad: 25
+};                                      // Object    
+let frutas = ["Manzana", "Banana", "Cereza"]; // Array
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

@@ -4,7 +4,7 @@ Una variable es un contenedor para almacenar datos, que puede cambiar durante la
 
 La declaración se realiza a través de las palabras reservadas `var`, `let` o `const`, seguidas del nombre de la variable y, opcionalmente, un valor inicial.
 
-```javascript
+```javascript,runnable
 var nombreVar = "Juan";
 let nombreLet = "Ana";
 const nombreConst = "Luis";

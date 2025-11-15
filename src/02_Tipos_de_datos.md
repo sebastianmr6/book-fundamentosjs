@@ -3,11 +3,11 @@ Los tipos de datos en JavaScript son las diferentes categorías de valores que p
 
 ## Tipos de datos primitivos
 Los tipos de datos primitivos en JavaScript son los siguientes:
-- **Number**: Representa tanto números enteros como números de punto flotante. Ejemplo: `42`, `3.14`.
 - **String**: Representa secuencias de caracteres. Se pueden definir usando comillas simples, dobles o backticks. Ejemplo: `'Hola'`, `"Mundo"`, `` `Hola Mundo` ``.
+- **Number**: Representa tanto números enteros como números de punto flotante. Ejemplo: `42`, `3.14`.
 - **Boolean**: Representa valores lógicos, que pueden ser `true` (verdadero) o `false` (falso).
-- **Undefined**: Representa una variable que ha sido declarada pero no inicializada. Su valor es `undefined`.
 - **Null**: Representa la ausencia intencional de cualquier valor. Su valor es `null`.
+- **Undefined**: Representa una variable que ha sido declarada pero no inicializada. Su valor es `undefined`.
 - **Symbol**: Introducido en ECMAScript 6, representa un valor único e inmutable, utilizado principalmente como identificadores de propiedades de objetos.
 - **BigInt**: Introducido en ECMAScript 2020, permite representar números enteros muy grandes que exceden el límite de los números de tipo `Number`.
 
@@ -27,6 +27,14 @@ let persona = {
 ```javascript
 let numeros = [1, 2, 3, 4, 5];
 let mezclado = [1, "dos", true, { clave: "valor" }, [6, 7, 8]];
+```
+- **Function**: En JavaScript, las funciones son también objetos y pueden ser tratadas como tales. Pueden ser asignadas a variables, pasadas como argumentos a otras funciones y retornadas desde funciones. Ejemplo:
+```javascript
+function saludar(nombre) {
+    return "Hola, " + nombre + "!";
+}
+console.log(saludar("María"));
+> "Hola, María!"
 ```
 ## Conversión de tipos
 JavaScript realiza conversiones de tipos de datos de manera automática (coerción) en ciertas situaciones, como en operaciones aritméticas o comparaciones. También es posible realizar conversiones explícitas utilizando funciones como `String()`, `Number()`, `Boolean()`, entre otras. Por ejemplo:

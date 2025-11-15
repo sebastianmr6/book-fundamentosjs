@@ -123,6 +123,12 @@ console.log(a != b);
 > true
 ```
 - `!==` : Desigualdad estricta (compara valores y tipos)
+```javascript
+let a = 5;
+let b = '5';
+console.log(a !== b);
+> true
+```
 - `>` : Mayor que
 - `<` : Menor que
 - `>=` : Mayor o igual que

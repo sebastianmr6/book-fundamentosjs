@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Operadores - Fundamentos de JavaScript para profesionales de Ciencias Ambientales</title>
+        <title>Manipulación de cadenas - Fundamentos de JavaScript para profesionales de Ciencias Ambientales</title>
 
 
         <!-- Custom HTML head -->
@@ -175,178 +175,70 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="operadores-en-javascript"><a class="header" href="#operadores-en-javascript">Operadores en JavaScript</a></h1>
-<p>JavaScript ofrece una variedad de operadores que permiten realizar operaciones sobre valores y variables. A continuación, se describen los principales tipos de operadores:</p>
-<h2 id="operadores-aritméticos"><a class="header" href="#operadores-aritméticos">Operadores Aritméticos</a></h2>
-<p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas:</p>
-<ul>
-<li><code>+</code> : Suma</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-let b = 3;
-let suma = a + b; 
-console.log(suma);
-&gt; 8
+                        <h1 id="manipulación-de-cadenas"><a class="header" href="#manipulación-de-cadenas">Manipulación de cadenas</a></h1>
+<p>Las cadenas de texto, o <em>strings</em>, son una secuencia de caracteres utilizados para representar texto en JavaScript. Las cadenas pueden ser definidas utilizando comillas simples (<code>'...'</code>), comillas dobles (<code>"..."</code>) o backticks (<code>`...`</code>) para plantillas literales.</p>
+<h2 id="creación-de-cadenas"><a class="header" href="#creación-de-cadenas">Creación de cadenas</a></h2>
+<pre><code class="language-javascript">let cadena1 = 'Hola, Mundo!';               // Comillas simples
+let cadena2 = "Hola, Mundo!";               // Comillas dobles
+let cadena3 = `Hola, Mundo!`;               // Backticks (plantillas literales)
 </code></pre>
-<ul>
-<li><code>-</code> : Resta</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-let b = 3;
-let resta = a - b; 
-console.log(resta);
-&gt; 2
+<h2 id="operaciones-comunes-con-cadenas"><a class="header" href="#operaciones-comunes-con-cadenas">Operaciones comunes con cadenas</a></h2>
+<h3 id="concatenación"><a class="header" href="#concatenación">Concatenación</a></h3>
+<p>La concatenación de cadenas se puede realizar utilizando el operador <code>+</code>, interpolación de cadenas (template literals) o el método <code>concat()</code>.</p>
+<pre><code class="language-javascript">let saludo = 'Hola, ' + 'Mundo!';           // Usando +
+console.log(saludo);
+&gt; "Hola, Mundo!"
+
+let nombre = 'Juan';
+let saludo2 = `Hola, ${nombre}!`;            // Usando template literals
+console.log(saludo2);
+&gt; "Hola, Juan!"
+
+let saludo3 = 'Hola, '.concat('Mundo!');    // Usando concat()
+console.log(saludo3);
+&gt; "Hola, Mundo!"
 </code></pre>
-<ul>
-<li><code>*</code> : Multiplicación</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-let b = 3;
-let multiplicacion = a * b; 
-console.log(multiplicacion);
-&gt; 15
-</code></pre>
-<ul>
-<li><code>/</code> : División</li>
-</ul>
-<pre><code class="language-javascript">let a = 6;
-let b = 3;
-let division = a / b;
-console.log(division);
-&gt; 2
-</code></pre>
-<ul>
-<li><code>%</code> : Módulo (resto de una división)</li>
-</ul>
-<pre><code class="language-javascript">let a = 10;
-let b = 4;
-let modulo = a % b;
-console.log(modulo);
-&gt; 2
-</code></pre>
-<ul>
-<li><code>++</code> : Incremento</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-a++;
-console.log(a);
-&gt; 6
-</code></pre>
-<ul>
-<li><code>--</code> : Decremento</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-a--;
-console.log(a);
+<h3 id="longitud-de-una-cadena"><a class="header" href="#longitud-de-una-cadena">Longitud de una cadena</a></h3>
+<p>Puedes obtener la longitud de una cadena utilizando la propiedad <code>length</code>.</p>
+<pre><code class="language-javascript">let texto = 'Hola';
+console.log(texto.length);
 &gt; 4
 </code></pre>
-<h2 id="operadores-de-asignación"><a class="header" href="#operadores-de-asignación">Operadores de Asignación</a></h2>
-<p>Los operadores de asignación se utilizan para asignar valores a las variables:</p>
-<ul>
-<li><code>=</code> : Asignación simple</li>
-</ul>
-<pre><code class="language-javascript">let a = 10;
-console.log(a);
-&gt; 10
+<h3 id="acceso-a-caracteres"><a class="header" href="#acceso-a-caracteres">Acceso a caracteres</a></h3>
+<p>Puedes acceder a caracteres individuales de una cadena utilizando la notación de corchetes o el método <code>charAt()</code>.</p>
+<pre><code class="language-javascript">let texto = 'Hola';
+console.log(texto[0]);
+&gt; "H"
+console.log(texto.charAt(1));
+&gt; "o"
 </code></pre>
+<h3 id="métodos-comunes-de-cadenas"><a class="header" href="#métodos-comunes-de-cadenas">Métodos comunes de cadenas</a></h3>
 <ul>
-<li><code>+=</code> : Asignación con suma</li>
+<li><code>toUpperCase()</code>: Convierte la cadena a mayúsculas.</li>
+<li><code>toLowerCase()</code>: Convierte la cadena a minúsculas.</li>
+<li><code>concat()</code>: Une dos o más cadenas.</li>
+<li><code>trim()</code>: Elimina los espacios en blanco al inicio y al final de la cadena.</li>
+<li><code>slice()</code>: Extrae una sección de la cadena y devuelve una nueva cadena.</li>
+<li><code>replace()</code>: Reemplaza una parte de la cadena por otra.</li>
+<li><code>split()</code>: Divide la cadena en un array de subcadenas basándose en un separador.</li>
 </ul>
-<pre><code class="language-javascript">let numero = 5;
-numero += 3; // Equivalente a numero = numero + 3
-console.log(numero);
-&gt; 8
+<pre><code class="language-javascript">let texto = '  El análiis espacial es genial, ¡usar los Sensors Remotos es increíble!  ';
+console.log(texto.toUpperCase());
+&gt; "  EL ANÁLIIS ESPACIAL ES GENIAL, ¡USAR LOS SENSORS REMOTOS ES INCREÍBLE!  "
+console.log(texto.toLowerCase());
+&gt; "  el análiis espacial es genial, ¡usar los sensors remotos es increíble!  "
+console.log(texto.concat(' ¿Cómo estás?'));
+&gt; "  El análiis espacial es genial, ¡usar los Sensors Remotos es increíble!   ¿Cómo estás?"
+console.log(texto.trim());
+&gt; 'El análiis espacial es genial, ¡usar los Sensors Remotos es increíble!'
+console.log(texto.slice(2, 7));
+&gt; "El an"
+console.log(texto.replace('Sensors Remotos', 'JavaScript'));
+&gt; "  El análiis espacial es genial, ¡usar los JavaScript es increíble!  "
+console.log(texto.split(', '));
+&gt; ['  El análiis espacial es genial', '¡usar los Sensors Remotos es increíble!  ']
 </code></pre>
-<ul>
-<li><code>-=</code> : Asignación con resta</li>
-</ul>
-<pre><code class="language-javascript">let numero = 5;
-numero -= 2; // Equivalente a numero = numero - 2
-console.log(numero);
-&gt; 3
-</code></pre>
-<ul>
-<li><code>*=</code> : Asignación con multiplicación</li>
-</ul>
-<pre><code class="language-javascript">let numero = 5;
-numero *= 4; // Equivalente a numero = numero * 4
-console.log(numero);
-&gt; 20
-</code></pre>
-<ul>
-<li><code>/=</code> : Asignación con división</li>
-</ul>
-<pre><code class="language-javascript">let numero = 20;
-numero /= 5; // Equivalente a numero = numero / 5
-console.log(numero);
-&gt; 4
-</code></pre>
-<ul>
-<li><code>%=</code> : Asignación con módulo</li>
-</ul>
-<pre><code class="language-javascript">let numero = 10;
-numero %= 3; // Equivalente a numero = numero % 3
-console.log(numero);
-&gt; 1
-</code></pre>
-<h2 id="operadores-de-comparación"><a class="header" href="#operadores-de-comparación">Operadores de Comparación</a></h2>
-<p>Los operadores de comparación se utilizan para comparar dos valores:</p>
-<ul>
-<li><code>==</code> : Igualdad (compara valores)</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-let b = '5';
-console.log(a == b);
-&gt; true
-</code></pre>
-<ul>
-<li><code>===</code> : Igualdad estricta (compara valores y tipos)</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-let b = '5';
-console.log(a === b);
-&gt; false
-</code></pre>
-<ul>
-<li><code>!=</code> : Desigualdad (compara valores)</li>
-</ul>
-<pre><code class="language-javascript">let a = 5;
-let b = '6';
-console.log(a != b);
-&gt; true
-</code></pre>
-<ul>
-<li><code>!==</code> : Desigualdad estricta (compara valores y tipos)</li>
-<li><code>&gt;</code> : Mayor que</li>
-<li><code>&lt;</code> : Menor que</li>
-<li><code>&gt;=</code> : Mayor o igual que</li>
-<li><code>&lt;=</code> : Menor o igual que</li>
-</ul>
-<h2 id="operadores-lógicos"><a class="header" href="#operadores-lógicos">Operadores Lógicos</a></h2>
-<p>Los operadores lógicos se utilizan para combinar expresiones booleanas:</p>
-<ul>
-<li><code>&amp;&amp;</code> : AND lógico</li>
-<li><code>||</code> : OR lógico</li>
-<li><code>!</code> : NOT lógico</li>
-</ul>
-<h2 id="operadores-de-cadena"><a class="header" href="#operadores-de-cadena">Operadores de Cadena</a></h2>
-<p>Los operadores de cadena se utilizan para manipular cadenas de texto:</p>
-<ul>
-<li><code>+</code> : Concatenación de cadenas</li>
-<li><code>+=</code> : Concatenación y asignación</li>
-</ul>
-<h2 id="operadores-ternarios"><a class="header" href="#operadores-ternarios">Operadores Ternarios</a></h2>
-<p>El operador ternario es una forma abreviada de una declaración <code>if-else</code>:</p>
-<pre><code class="language-javascript">condición ? expresión1 : expresión2
-</code></pre>
-<p>Si la condición es verdadera, se evalúa <code>expresión1</code>; de lo contrario, se evalúa <code>expresión2</code>.</p>
-<h2 id="operadores-de-tipo"><a class="header" href="#operadores-de-tipo">Operadores de Tipo</a></h2>
-<p>Los operadores de tipo se utilizan para obtener información sobre el tipo de dato de una variable:</p>
-<ul>
-<li><code>typeof</code> : Devuelve una cadena que indica el tipo de dato</li>
-<li><code>instanceof</code> : Comprueba si un objeto es una instancia de una clase específica
-Estos operadores son fundamentales para la manipulación de datos y el control del flujo en JavaScript.</li>
-</ul>
+<p>Entender cómo manipular cadenas es esencial para trabajar con texto en JavaScript, ya que muchas aplicaciones requieren procesamiento y manipulación de datos textuales.</p>
 
                     </main>
 
@@ -356,6 +248,9 @@ Estos operadores son fundamentales para la manipulación de datos y el control d
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next prefetch" href="04_operadores.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -367,6 +262,9 @@ Estos operadores son fundamentales para la manipulación de datos y el control d
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next prefetch" href="04_operadores.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

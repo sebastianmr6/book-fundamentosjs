@@ -300,11 +300,11 @@ let miVariableLet = "Hola mundo";
 <h2 id="tipos-de-datos-primitivos"><a class="header" href="#tipos-de-datos-primitivos">Tipos de datos primitivos</a></h2>
 <p>Los tipos de datos primitivos en JavaScript son los siguientes:</p>
 <ul>
-<li><strong>Number</strong>: Representa tanto números enteros como números de punto flotante. Ejemplo: <code>42</code>, <code>3.14</code>.</li>
 <li><strong>String</strong>: Representa secuencias de caracteres. Se pueden definir usando comillas simples, dobles o backticks. Ejemplo: <code>'Hola'</code>, <code>"Mundo"</code>, <code>`Hola Mundo`</code>.</li>
+<li><strong>Number</strong>: Representa tanto números enteros como números de punto flotante. Ejemplo: <code>42</code>, <code>3.14</code>.</li>
 <li><strong>Boolean</strong>: Representa valores lógicos, que pueden ser <code>true</code> (verdadero) o <code>false</code> (falso).</li>
-<li><strong>Undefined</strong>: Representa una variable que ha sido declarada pero no inicializada. Su valor es <code>undefined</code>.</li>
 <li><strong>Null</strong>: Representa la ausencia intencional de cualquier valor. Su valor es <code>null</code>.</li>
+<li><strong>Undefined</strong>: Representa una variable que ha sido declarada pero no inicializada. Su valor es <code>undefined</code>.</li>
 <li><strong>Symbol</strong>: Introducido en ECMAScript 6, representa un valor único e inmutable, utilizado principalmente como identificadores de propiedades de objetos.</li>
 <li><strong>BigInt</strong>: Introducido en ECMAScript 2020, permite representar números enteros muy grandes que exceden el límite de los números de tipo <code>Number</code>.</li>
 </ul>
@@ -326,6 +326,15 @@ let miVariableLet = "Hola mundo";
 <pre><code class="language-javascript">let numeros = [1, 2, 3, 4, 5];
 let mezclado = [1, "dos", true, { clave: "valor" }, [6, 7, 8]];
 </code></pre>
+<ul>
+<li><strong>Function</strong>: En JavaScript, las funciones son también objetos y pueden ser tratadas como tales. Pueden ser asignadas a variables, pasadas como argumentos a otras funciones y retornadas desde funciones. Ejemplo:</li>
+</ul>
+<pre><code class="language-javascript">function saludar(nombre) {
+    return "Hola, " + nombre + "!";
+}
+console.log(saludar("María"));
+&gt; "Hola, María!"
+</code></pre>
 <h2 id="conversión-de-tipos"><a class="header" href="#conversión-de-tipos">Conversión de tipos</a></h2>
 <p>JavaScript realiza conversiones de tipos de datos de manera automática (coerción) en ciertas situaciones, como en operaciones aritméticas o comparaciones. También es posible realizar conversiones explícitas utilizando funciones como <code>String()</code>, <code>Number()</code>, <code>Boolean()</code>, entre otras. Por ejemplo:</p>
 <pre><code class="language-javascript">let numero = 42;
@@ -338,6 +347,8 @@ let booleano = Boolean(1);          // Conversión explícita a Boolean
 <h2 id="ejemplos-prácticos"><a class="header" href="#ejemplos-prácticos">Ejemplos prácticos</a></h2>
 <pre><code class="language-javascript">// Ejemplo de tipos de datos primitivos
 let numero = 100;                       // Number
+let notacionCientifica = 1.23e5;        // Number en notación científica
+let infinito = Infinity;                // Number especial
 let texto = "Hola, Mundo!";             // String
 let esVerdadero = true;                 // Boolean
 let sinValor;                           // Undefined
@@ -351,6 +362,70 @@ let persona = {
 };                                      // Object    
 let frutas = ["Manzana", "Banana", "Cereza"]; // Array
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="manipulación-de-cadenas"><a class="header" href="#manipulación-de-cadenas">Manipulación de cadenas</a></h1>
+<p>Las cadenas de texto, o <em>strings</em>, son una secuencia de caracteres utilizados para representar texto en JavaScript. Las cadenas pueden ser definidas utilizando comillas simples (<code>'...'</code>), comillas dobles (<code>"..."</code>) o backticks (<code>`...`</code>) para plantillas literales.</p>
+<h2 id="creación-de-cadenas"><a class="header" href="#creación-de-cadenas">Creación de cadenas</a></h2>
+<pre><code class="language-javascript">let cadena1 = 'Hola, Mundo!';               // Comillas simples
+let cadena2 = "Hola, Mundo!";               // Comillas dobles
+let cadena3 = `Hola, Mundo!`;               // Backticks (plantillas literales)
+</code></pre>
+<h2 id="operaciones-comunes-con-cadenas"><a class="header" href="#operaciones-comunes-con-cadenas">Operaciones comunes con cadenas</a></h2>
+<h3 id="concatenación"><a class="header" href="#concatenación">Concatenación</a></h3>
+<p>La concatenación de cadenas se puede realizar utilizando el operador <code>+</code>, interpolación de cadenas (template literals) o el método <code>concat()</code>.</p>
+<pre><code class="language-javascript">let saludo = 'Hola, ' + 'Mundo!';           // Usando +
+console.log(saludo);
+&gt; "Hola, Mundo!"
+
+let nombre = 'Juan';
+let saludo2 = `Hola, ${nombre}!`;            // Usando template literals
+console.log(saludo2);
+&gt; "Hola, Juan!"
+
+let saludo3 = 'Hola, '.concat('Mundo!');    // Usando concat()
+console.log(saludo3);
+&gt; "Hola, Mundo!"
+</code></pre>
+<h3 id="longitud-de-una-cadena"><a class="header" href="#longitud-de-una-cadena">Longitud de una cadena</a></h3>
+<p>Puedes obtener la longitud de una cadena utilizando la propiedad <code>length</code>.</p>
+<pre><code class="language-javascript">let texto = 'Hola';
+console.log(texto.length);
+&gt; 4
+</code></pre>
+<h3 id="acceso-a-caracteres"><a class="header" href="#acceso-a-caracteres">Acceso a caracteres</a></h3>
+<p>Puedes acceder a caracteres individuales de una cadena utilizando la notación de corchetes o el método <code>charAt()</code>.</p>
+<pre><code class="language-javascript">let texto = 'Hola';
+console.log(texto[0]);
+&gt; "H"
+console.log(texto.charAt(1));
+&gt; "o"
+</code></pre>
+<h3 id="métodos-comunes-de-cadenas"><a class="header" href="#métodos-comunes-de-cadenas">Métodos comunes de cadenas</a></h3>
+<ul>
+<li><code>toUpperCase()</code>: Convierte la cadena a mayúsculas.</li>
+<li><code>toLowerCase()</code>: Convierte la cadena a minúsculas.</li>
+<li><code>concat()</code>: Une dos o más cadenas.</li>
+<li><code>trim()</code>: Elimina los espacios en blanco al inicio y al final de la cadena.</li>
+<li><code>slice()</code>: Extrae una sección de la cadena y devuelve una nueva cadena.</li>
+<li><code>replace()</code>: Reemplaza una parte de la cadena por otra.</li>
+<li><code>split()</code>: Divide la cadena en un array de subcadenas basándose en un separador.</li>
+</ul>
+<pre><code class="language-javascript">let texto = '  El análiis espacial es genial, ¡usar los Sensors Remotos es increíble!  ';
+console.log(texto.toUpperCase());
+&gt; "  EL ANÁLIIS ESPACIAL ES GENIAL, ¡USAR LOS SENSORS REMOTOS ES INCREÍBLE!  "
+console.log(texto.toLowerCase());
+&gt; "  el análiis espacial es genial, ¡usar los sensors remotos es increíble!  "
+console.log(texto.concat(' ¿Cómo estás?'));
+&gt; "  El análiis espacial es genial, ¡usar los Sensors Remotos es increíble!   ¿Cómo estás?"
+console.log(texto.trim());
+&gt; 'El análiis espacial es genial, ¡usar los Sensors Remotos es increíble!'
+console.log(texto.slice(2, 7));
+&gt; "El an"
+console.log(texto.replace('Sensors Remotos', 'JavaScript'));
+&gt; "  El análiis espacial es genial, ¡usar los JavaScript es increíble!  "
+console.log(texto.split(', '));
+&gt; ['  El análiis espacial es genial', '¡usar los Sensors Remotos es increíble!  ']
+</code></pre>
+<p>Entender cómo manipular cadenas es esencial para trabajar con texto en JavaScript, ya que muchas aplicaciones requieren procesamiento y manipulación de datos textuales.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="operadores-en-javascript"><a class="header" href="#operadores-en-javascript">Operadores en JavaScript</a></h1>
 <p>JavaScript ofrece una variedad de operadores que permiten realizar operaciones sobre valores y variables. A continuación, se describen los principales tipos de operadores:</p>
 <h2 id="operadores-aritméticos"><a class="header" href="#operadores-aritméticos">Operadores Aritméticos</a></h2>
@@ -493,6 +568,13 @@ console.log(a != b);
 </code></pre>
 <ul>
 <li><code>!==</code> : Desigualdad estricta (compara valores y tipos)</li>
+</ul>
+<pre><code class="language-javascript">let a = 5;
+let b = '5';
+console.log(a !== b);
+&gt; true
+</code></pre>
+<ul>
 <li><code>&gt;</code> : Mayor que</li>
 <li><code>&lt;</code> : Menor que</li>
 <li><code>&gt;=</code> : Mayor o igual que</li>

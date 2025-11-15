@@ -50,6 +50,8 @@ Entender los tipos de datos en JavaScript es fundamental para escribir código e
 ```javascript
 // Ejemplo de tipos de datos primitivos
 let numero = 100;                       // Number
+let notacionCientifica = 1.23e5;        // Number en notación científica
+let infinito = Infinity;                // Number especial
 let texto = "Hola, Mundo!";             // String
 let esVerdadero = true;                 // Boolean
 let sinValor;                           // Undefined
